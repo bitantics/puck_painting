@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Puck Painting Test</title>
+    <script src="puckpaint.js"></script>
+    <style>
+        .puck {
+            display: block;
+            position: absolute;
+            z-index: 9001;
+            width:  30px;
+            height: 30px;
+            background-color: #5a2e2e;
+            border-radius: 10%;
+            border-color: 1px solid #3a0e0e;
+            box-shadow: 2px 2px 6px #3a2828;
+            cursor: move;
+        }
+        .puck:before {
+            content: "p";
+            font-size: 19px;
+
+            line-height: 1;
+            position: absolute;
+            top: 1px;
+            left: 10px;
+            opacity: .8;
+        }
+
+        .puck.eraser:before {
+            content: "e";
+        }
+
+        .grabbed {
+            cursor: grabbing;
+            cursor: -moz-grabbing;
+            cursor: -webkit-grabbing;
+        }
+        .puckcanvas {
+            position: absolute;
+            z-index: 9000;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Puck Painting Test</h1>
+    <script>PuckPaint.init();</script>
+</body>
+</html>
